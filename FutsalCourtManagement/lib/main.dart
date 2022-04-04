@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:testing/components/futsalcard.dart';
+import 'package:testing/components/navigation_drawer_widget.dart';
+import 'package:testing/dashboard.dart';
 import 'package:testing/page/booking_page.dart';
 import 'package:testing/page/favorite_page.dart';
 import 'package:testing/page/help_page.dart';
@@ -22,66 +24,51 @@ class CourtifyApp extends StatefulWidget {
 
 class _CourtifyAppState extends State<CourtifyApp> {
   // this is the index for the bottomNavigationBar
-  int currentIndex = 3;
-  // this is the screen based on the selected index on BottomNavigationBar
-  final screens = [
-    //Index = 0
-    home_page(),
-    //Index = 1
-    favorite_page(),
-    //Index = 2
-    booking_page(),
-    //Index = 3
-    help_page(),
-  ];
+
   //sometime we can face some http request erreur if the owner of the picture delted it or the url is not available
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.black,
-        title: Row(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.menu,
-                color: Colors.white,
-              ),
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+         
+          const SizedBox(height: 30),
+        
+          const SizedBox(height: 30),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: Stack(
+              children: <Widget>[
+                Positioned.fill(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: <Color>[
+                          Color(0xFF0D47A1),
+                          Color(0xFF1976D2),
+                          Color(0xFF42A5F5),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(16.0),
+                    primary: Colors.white,
+                    textStyle: const TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Dashboard()));
+                  },
+                  child: const Text('Log in'),
+                ),
+              
+                
+              ],
             ),
-          ],
-        ),
-      ),
-      body: IndexedStack(
-        //this indexedstack will keep the state when you directed to another page.
-        index: currentIndex,
-        children: screens,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
-        unselectedItemColor: Colors.white,
-        selectedItemColor: Colors.blue,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: "Favorite",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: "Bookings",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.help),
-            label: "Help",
           ),
         ],
       ),

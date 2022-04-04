@@ -1,0 +1,1 @@
+int isLoggedIn = 2;

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class help_page extends StatefulWidget {
   const help_page({Key? key}) : super(key: key);
 
@@ -9,6 +10,7 @@ class help_page extends StatefulWidget {
   State<help_page> createState() => _help_pageState();
 }
 
+// ignore: camel_case_types
 class _help_pageState extends State<help_page> {
   @override
   Widget build(BuildContext context) {

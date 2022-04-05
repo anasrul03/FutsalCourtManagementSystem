@@ -8,7 +8,9 @@ import 'package:testing/page/favorite_page.dart';
 import 'package:testing/page/help_page.dart';
 import 'package:testing/page/home_page.dart';
 
- int currentIndex = 0;
+ // this is the index for the bottomNavigationBar
+  int currentIndex = 0;
+  // this is the screen based on the selected index on BottomNavigationBar
    final screens = [
     //Index = 0
     home_page(),
@@ -19,6 +21,7 @@ import 'package:testing/page/home_page.dart';
     //Index = 3
     help_page(),
   ];
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -33,10 +36,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  // this is the index for the bottomNavigationBar
  
-  // this is the screen based on the selected index on BottomNavigationBar
-
   //sometime we can face some http request erreur if the owner of the picture delted it or the url is not available
   @override
   Widget build(BuildContext context) {

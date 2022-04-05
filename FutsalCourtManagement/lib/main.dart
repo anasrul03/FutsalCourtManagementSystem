@@ -1,13 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:testing/components/futsalcard.dart';
-import 'package:testing/components/navigation_drawer_widget.dart';
 import 'package:testing/dashboard.dart';
-import 'package:testing/page/booking_page.dart';
-import 'package:testing/page/favorite_page.dart';
-import 'package:testing/page/help_page.dart';
-import 'package:testing/page/home_page.dart';
+
 
 void main() {
   runApp(MaterialApp(

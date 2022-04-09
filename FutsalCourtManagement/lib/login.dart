@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,6 +11,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,11 +42,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Text("Login first before make a bookings"),
               SizedBox(height: 18),
               TextField(
+                controller: emailController,
                   decoration: InputDecoration(
                       hintText: "Your Email",
                       prefixIcon: Icon(Icons.mail, color: Colors.black))),
               SizedBox(height: 18),
               TextField(
+                controller: passwordController,
                   decoration: InputDecoration(
                       hintText: "Your password",
                       prefixIcon: Icon(Icons.lock, color: Colors.black))),
@@ -47,11 +61,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: EdgeInsets.symmetric(vertical: 20),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12)),
-                      onPressed: () {},
+                      onPressed: (){},
                       child: Text("Login",
                           style: TextStyle(color: Colors.white, fontSize: 10))))
             ]),
       ),
     );
+  }
+
+  Future sigIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim());
   }
 }

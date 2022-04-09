@@ -18,8 +18,12 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return Drawer(
       child: Material(
+<<<<<<< HEAD
        
           color: Colors.blue,
+=======
+        color: Colors.black,
+>>>>>>> parent of 3dbf683 (touch up homepage listview)
         child: ListView(
           children: <Widget>[
             buildHeader(

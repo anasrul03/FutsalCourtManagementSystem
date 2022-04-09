@@ -121,11 +121,6 @@ class _home_pageState extends State<home_page> {
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                 futsalCard(
-                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLQgqBncZZFhY1wzD3y3E5LqEpp4uJbYyc9A&usqp=CAU',
-                                  "Free 1 Hour Promo",
-                                  "Ramadan Specials",
-                                ),
                                 //Here you can add what ever you want
                               ],
                             ),
@@ -134,13 +129,7 @@ class _home_pageState extends State<home_page> {
                           Container(
                             child: ListView(
                               scrollDirection: Axis.horizontal,
-                              children: [
-                                  futsalCard(
-                                  'https://image.made-in-china.com/2f0j00BYofzQNhRupa/Indoor-Polypropylene-Plastic-Futsal-Court-Flooring.jpg',
-                                  "U13 Futsal Open",
-                                  "Dun Bunut Payong",
-                                )
-                              ],
+                              children: [],
                             ),
                           ),
                         ],

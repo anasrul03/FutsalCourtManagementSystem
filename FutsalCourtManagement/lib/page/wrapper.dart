@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
-import 'package:testing/page/home_page.dart';
+import '../dashboard.dart';
+
+//Wrapper mean this widget listen for authentication 
 
 class Wrapper extends StatelessWidget {
   const Wrapper({ Key? key }) : super(key: key);
@@ -9,6 +11,6 @@ class Wrapper extends StatelessWidget {
 
 
 //return either Home or Authenticate widgets
-return home_page();
+return Dashboard();
   }
 }

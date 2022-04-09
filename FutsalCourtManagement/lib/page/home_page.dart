@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, camel_case_types
 
 import 'package:flutter/material.dart';
 import 'package:testing/components/futsalcard.dart';
@@ -10,7 +10,6 @@ class home_page extends StatefulWidget {
   State<home_page> createState() => _home_pageState();
 }
 
-// ignore: camel_case_types
 class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {

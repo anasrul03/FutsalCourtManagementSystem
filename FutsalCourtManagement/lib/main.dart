@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:testing/dashboard.dart';
 
+import 'login.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,6 +19,9 @@ class CourtifyApp extends StatefulWidget {
 }
 
 class _CourtifyAppState extends State<CourtifyApp> {
+//Intialize Firebase App
+  
+
   // this is the index for the bottomNavigationBar
 
   //sometime we can face some http request erreur if the owner of the picture delted it or the url is not available
@@ -27,9 +31,7 @@ class _CourtifyAppState extends State<CourtifyApp> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-         
           const SizedBox(height: 30),
-        
           const SizedBox(height: 30),
           ClipRRect(
             borderRadius: BorderRadius.circular(4),
@@ -56,12 +58,10 @@ class _CourtifyAppState extends State<CourtifyApp> {
                   ),
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Dashboard()));
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
                   child: const Text('Log in'),
                 ),
-              
-                
               ],
             ),
           ),
